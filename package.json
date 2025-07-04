@@ -2,7 +2,7 @@
   "name": "mac-authentication",
   "version": "1.0.0",
   "scripts": {
-    "build": "npm install --prefix backend && npm install --prefix frontent && npm run build --prefix frontent && npm run export --prefix frontent && npm run build --prefix backend",
+    "build": "npm install --prefix backend && npm install --prefix frontent && npm run build --prefix frontent && npm run build --prefix frontent && npm run build --prefix backend",
     "start": "npm run start --prefix backend"
   }
 }
