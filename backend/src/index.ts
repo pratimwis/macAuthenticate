@@ -22,7 +22,10 @@ nextApp.prepare().then(() => {
 
   app.use(
     cors({
-      origin: "https://macauthenticate.onrender.com",
+      origin: [
+      "https://macauthenticate.onrender.com",
+      "http://localhost:3000"
+    ],
       credentials: true,
     })
   );
