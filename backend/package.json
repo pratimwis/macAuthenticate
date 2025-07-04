@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "build": "tsc",
-  "start": "node dist/index.js",
-  "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
-},
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+  },
   "author": "wis-rana",
   "license": "ISC",
   "dependencies": {
@@ -19,6 +19,7 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.15.1",
+    "next": "^15.3.5",
     "os": "^0.1.2",
     "winston": "^3.17.0"
   },
