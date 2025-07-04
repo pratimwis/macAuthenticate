@@ -23,7 +23,7 @@ node_modules/
 
 # Next.js build output
 frontent/.next/
-frontent/out/
+# frontent/out/
 
 # Logs
 *.log

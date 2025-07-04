@@ -5,6 +5,7 @@ import authRouter from './routes/auth.route';
 import AppError from "./utils/appError"; 
 import cookieparser from 'cookie-parser';
 import cors from 'cors';
+import path from 'node:path';
 dotenv.config();
 
 
@@ -40,6 +41,20 @@ app.use((err: unknown, req: Request, res: Response, next: NextFunction) => {
   });
   console.log(err)
 });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../../frontent/out")));
+  
+  // Handle React routing - use middleware to avoid path-to-regexp issues
+  app.use((req, res, next) => {
+    // Only handle GET requests that haven't been handled by other routes
+    if (req.method === 'GET') {
+      res.sendFile(path.join(__dirname, "../../frontent/out/index.html"));
+    } else {
+      next();
+    }
+  });
+}
 
 
 app.get('/', (req: Request, res: Response) => {
